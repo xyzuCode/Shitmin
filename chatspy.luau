@@ -131,7 +131,7 @@ lists.VerticalAlignment = Enum.VerticalAlignment.Top
 lists.Parent = ChatLogs
 
 lists:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-	ChatLogs.CanvasSize = UDim2.new(0, 0, 0, listLayout.AbsoluteContentSize.Y)
+	ChatLogs.CanvasSize = UDim2.new(0, 0, 0, lists.AbsoluteContentSize.Y)
 	ChatLogs.CanvasPosition = Vector2.new(0, ChatLogs.AbsoluteCanvasSize.Y)
 end)
 
