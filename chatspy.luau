@@ -55,18 +55,16 @@ overlap.BackgroundColor3 = titleBar.BackgroundColor3
 overlap.BorderSizePixel = 0
 overlap.Parent = titleBar
 
--- 4. THE TITLE TEXT
 local windowTitle = Instance.new("TextLabel")
 windowTitle.Name = "WindowTitle"
 windowTitle.Size = UDim2.new(1, 0, 1, 0)
 windowTitle.BackgroundTransparency = 1
-windowTitle.Text = "Chat Spy" -- You can change this to your app name
+windowTitle.Text = "Chat Spy"
 windowTitle.TextColor3 = Color3.fromRGB(75, 75, 75) -- Subtle dark grey
 windowTitle.Font = Enum.Font.GothamMedium -- Closest to San Francisco
 windowTitle.TextSize = 13
 windowTitle.Parent = titleBar
 
--- 5. Traffic Lights (The 3 Dots)
 local buttonContainer = Instance.new("Frame")
 buttonContainer.Size = UDim2.new(0, 60, 1, 0)
 buttonContainer.Position = UDim2.new(0, 12, 0, 0)
@@ -80,7 +78,7 @@ layout.Padding = UDim.new(0, 8)
 layout.VerticalAlignment = Enum.VerticalAlignment.Center
 layout.Parent = buttonContainer
 
-local function createMacButton(color, callback)
+local function createWindowControls(color, callback)
 	local btn = Instance.new("ImageButton")
 	btn.Size = UDim2.new(0, 12, 0, 12)
 	btn.BackgroundColor3 = color
@@ -94,9 +92,9 @@ local function createMacButton(color, callback)
 	btn.MouseButton1Click:connect(callback)
 end
 
-createMacButton(Color3.fromRGB(255, 96, 92), function() gui:Destroy() end)    -- Red
-createMacButton(Color3.fromRGB(255, 189, 68))   -- Yellow
-createMacButton(Color3.fromRGB(0, 202, 78))     -- Green
+createWindowControls(Color3.fromRGB(255, 96, 92), function() gui:Destroy() end)    -- Red
+createWindowControls(Color3.fromRGB(255, 189, 68))   -- Yellow
+createWindowControls(Color3.fromRGB(0, 202, 78))     -- Green
 
 
 local ChatLogs = Instance.new("ScrollingFrame")
